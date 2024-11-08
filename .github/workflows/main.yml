@@ -1,25 +1,34 @@
 name: CI/CD
 
-on: [push, pull_request] # Aciona o workflow em pushes e pull requests
+on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest # Define o ambiente onde o job será executado
-
+  backend-tests:
+    runs-on: ubuntu-latest
     steps:
-      # Baixa o código do repositório
       - uses: actions/checkout@v2
-
-      # Configura o Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # Versão do Node.js
-
-      # Instala as dependências do projeto
-      - name: Install dependencies
+          node-version: '14'
+      - name: Install backend dependencies
         run: npm install
-
-      # Executa testes
-      - name: Run tests
+        working-directory: ./backend
+      - name: Run backend tests
         run: npm test
+        working-directory: ./backend
+
+  frontend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: ./frontend
+      - name: Run frontend tests
+        run: npm test
+        working-directory: ./frontend
