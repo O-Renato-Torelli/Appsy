@@ -1,9 +1,8 @@
 // babel.config.js
 module.exports = {
-    presets: [
-      '@babel/preset-env',
-      '@babel/preset-react', // Preset para projetos React
-      '@babel/preset-typescript', // Suporte a TypeScript
-    ],
-  };
-  
+  presets: [
+    '@babel/preset-env',        // Compila sintaxe ES moderna
+    '@babel/preset-react',      // Suporte para React
+    '@babel/preset-typescript'  // Suporte para TypeScript
+  ]
+};
