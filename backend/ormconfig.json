@@ -1,6 +1,6 @@
 {
     "type": "postgres",
-    "host": "localhost",
+    "host": "postgres://u5lhuio77mp798:pac221c1c78ae4c6824d4d5774c63b5ed033ad34953440e49ee9ce557c7b2dd77@cd27da2sn4hj7h.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d54bjkodlpict2",
     "port": 5432,
     "username": "seu_usuario",
     "password": "sua_senha",
